@@ -201,8 +201,8 @@ public class MeasurementMNode extends MNode {
     if (schema instanceof MeasurementSchema) {
       return schema.getType();
     } else {
-      int index = schema.getMeasurementIdColumnIndex(measurementId);
-      return schema.getValueTSDataTypeList().get(index);
+      int index = schema.getSubMeasurementColumnIndex(measurementId);
+      return schema.getSubMeasurementsTSDataTypeList().get(index);
     }
   }
 }

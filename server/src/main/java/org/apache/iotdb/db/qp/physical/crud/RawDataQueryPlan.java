@@ -167,7 +167,7 @@ public class RawDataQueryPlan extends QueryPlan {
     return deviceToMeasurements.getOrDefault(device, new HashSet<>());
   }
 
-  public void addFilterPathInDeviceToMeasurements(Path path) {
+  public void addPathToDeviceToMeasurements(Path path) {
     deviceToMeasurements
         .computeIfAbsent(path.getDevice(), key -> new HashSet<>())
         .add(path.getMeasurement());

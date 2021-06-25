@@ -185,7 +185,7 @@ public class QueryOperator extends Operator {
         List<TSDataType> seriesTypes = generator.getSeriesTypes(filterPaths);
         HashMap<PartialPath, TSDataType> pathTSDataTypeHashMap = new HashMap<>();
         for (int i = 0; i < filterPaths.size(); i++) {
-          rawDataQueryPlan.addFilterPathInDeviceToMeasurements(filterPaths.get(i));
+          rawDataQueryPlan.addPathToDeviceToMeasurements(filterPaths.get(i));
           pathTSDataTypeHashMap.put(filterPaths.get(i), seriesTypes.get(i));
         }
         IExpression expression = filterOperator.transformToExpression(pathTSDataTypeHashMap);

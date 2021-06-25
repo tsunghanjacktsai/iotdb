@@ -226,7 +226,7 @@ public class CMManager extends MManager {
             new MeasurementMNode(
                 null, measurementSchema.getMeasurementId(), measurementSchema, null);
         if (measurementSchema instanceof VectorMeasurementSchema) {
-          for (String subSensorId : measurementSchema.getValueMeasurementIdList()) {
+          for (String subSensorId : measurementSchema.getSubMeasurementsList()) {
             cacheMeta(new PartialPath(path.getDevice(), subSensorId), measurementMNode, false);
           }
           cacheMeta(

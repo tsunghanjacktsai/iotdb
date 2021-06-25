@@ -42,7 +42,7 @@ public class PrimitiveMemTable extends AbstractMemTable {
   protected IWritableMemChunk genMemSeries(IMeasurementSchema schema) {
     if (schema.getType() == TSDataType.VECTOR) {
       return new WritableMemChunk(
-          schema, TVListAllocator.getInstance().allocate(schema.getValueTSDataTypeList()));
+          schema, TVListAllocator.getInstance().allocate(schema.getSubMeasurementsTSDataTypeList()));
     }
     return new WritableMemChunk(schema, TVListAllocator.getInstance().allocate(schema.getType()));
   }
